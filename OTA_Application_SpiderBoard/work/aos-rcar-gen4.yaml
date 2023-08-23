@@ -157,9 +157,9 @@ components:
         - "../meta-xt-common/meta-xt-control-domain"
         - "../meta-xt-common/meta-xt-dom0"
         - "../meta-xt-common/meta-xt-domx"
-        - "../../../meta-aos-rcar-gen4/meta-aos-rcar-gen4-dom0"
-        - "../../../meta-aos-rcar-gen4/meta-aos-rcar-gen4-domx"
-        - "../../../meta-aos-rcar-gen4/meta-aos-rcar-gen4-control-domain"
+        - "../meta-aos-rcar-gen4/meta-aos-rcar-gen4-dom0"
+        - "../meta-aos-rcar-gen4/meta-aos-rcar-gen4-domx"
+        - "../meta-aos-rcar-gen4/meta-aos-rcar-gen4-control-domain"
         - "../meta-aos"
       build_target: core-image-thin-initramfs
       external_src:
@@ -229,9 +229,9 @@ components:
         - "../meta-renesas/meta-rcar-gateway"
         - "../meta-xt-common/meta-xt-domx"
         - "../meta-xt-common/meta-xt-driver-domain"
-        - "../../../meta-aos-rcar-gen4/meta-aos-rcar-gen4-domd"
-        - "../../../meta-aos-rcar-gen4/meta-aos-rcar-gen4-domx"
-        - "../../../meta-aos-rcar-gen4/meta-aos-rcar-gen4-driver-domain"
+        - "../meta-aos-rcar-gen4/meta-aos-rcar-gen4-domd"
+        - "../meta-aos-rcar-gen4/meta-aos-rcar-gen4-domx"
+        - "../meta-aos-rcar-gen4/meta-aos-rcar-gen4-driver-domain"
       target_images:
         - "tmp/deploy/images/%{MACHINE}/Image"
         - "tmp/deploy/images/%{MACHINE}/xen-%{MACHINE}.uImage"
@@ -263,8 +263,8 @@ components:
         - "../meta-arm/meta-arm-toolchain"
         - "../meta-renesas/meta-rcar-gateway"
         - "../meta-xt-common/meta-xt-domu"
-        - "../../../meta-aos-rcar-gen4/meta-aos-rcar-gen4-domx"
-        - "../../../meta-aos-rcar-gen4/meta-aos-rcar-gen4-domu"
+        - "../meta-aos-rcar-gen4/meta-aos-rcar-gen4-domx"
+        - "../meta-aos-rcar-gen4/meta-aos-rcar-gen4-domu"
       build_target: rcar-image-minimal
       target_images:
         - "tmp/deploy/images/%{MACHINE}/Image"
@@ -402,20 +402,6 @@ parameters:
               domd_aos:
                 size: 3072 MiB
 
-#   USING_REMOTE_META_WHITEBOX_LAYER:
-#     desc: "Using remote repository instead of local meta layer"
-#     "no":
-#       default: true
-#     "yes":
-#       overrides:
-#         variables:
-#           META_WB_LAYER_PATH: "../whitebox-sdk/application_cpu/"
-#         common_data:
-#           sources:
-#             - type: git
-#               url: "https://github.com/renesas-rcar/whitebox-sdk.git"
-#               rev: "vX.Y"
-
   BUILD_DOMD_SDK:
     desc: "Switch build DomD SDK or not"
     "no":
@@ -425,4 +411,3 @@ parameters:
       overrides:
         variables:
           BUILD_DOMD_SDK: "1"
-

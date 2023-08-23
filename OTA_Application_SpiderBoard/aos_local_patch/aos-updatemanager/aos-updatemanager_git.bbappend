@@ -3,7 +3,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 RENESASOTA_IMPORT = "file://PluginRefApp"
 
 SRC_URI_append = " \
-    RENESASOTA_IMPORT;destsuffix=${S}/src/${GO_IMPORT}/vendor/${RENESASOTA_IMPORT} \
+    ${RENESASOTA_IMPORT};destsuffix=${S}/src/${GO_IMPORT}/vendor/PluginRefApp \
 "
 
 SRC_URI_append = "\
