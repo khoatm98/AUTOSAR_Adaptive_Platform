@@ -17,7 +17,7 @@ git checkout -q "232b553"
 cd $WORK/meta-openembedded
 git checkout -q "814eec9"
 cd $WORK/meta-renesas
-git checkout -b tmp c73719354acc0dee159239a7492aa7b9052d3063
+git checkout -q "fb473de"
 cd $WORK/meta-aos
 git checkout -q "v6.0.2"
 
@@ -52,6 +52,10 @@ source $WORK/poky/oe-init-build-env build-$1-$2
 cp $WORK/meta-renesas/meta-rcar-gateway/docs/sample/conf/$1/poky-gcc/bsp/*.conf conf/
 echo 'SSTATE_DIR = "${TOPDIR}/../common_data/sstate"' >> conf/local.conf
 echo 'DL_DIR = "${TOPDIR}/../common_data/downloads"' >> conf/local.conf
+echo 'INIT_MANAGER = "systemd"' >> conf/local.conf
+echo 'DISTRO_FEATURES:append = " virtualization seccomp"' >> conf/local.conf
+echo 'IMAGE_INSTALL:append = " aos-iamanager aos-provfirewall aos-communicationmanager aos-updatemanager"' >> conf/local.conf
+
 
 echo "The build directory is $(pwd) "
 

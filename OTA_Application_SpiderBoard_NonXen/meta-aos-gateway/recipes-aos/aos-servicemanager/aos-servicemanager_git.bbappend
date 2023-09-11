@@ -20,16 +20,6 @@ RDEPENDS_${PN} += "\
     python3-core \
 "
 
-# Kernel modules to run network containers
-RDEPENDS_${PN} += "\
-    kernel-module-bridge \
-    kernel-module-nfnetlink \
-    kernel-module-veth \
-    kernel-module-xt-addrtype \
-    kernel-module-xt-comment \
-    kernel-module-xt-conntrack \
-    kernel-module-overlay \
-"
 
 MIGRATION_SCRIPTS_PATH = "${base_prefix}/usr/share/aos/sm/migration"
 

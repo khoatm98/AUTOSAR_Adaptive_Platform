@@ -16,7 +16,7 @@ SRC_URI_append = "\
 "
 
 AOS_UM_UPDATE_MODULES ?= "\
-    updatemodules/overlayxenstore \
+    updatemodules/overlaysystemd \
     updatemodules/ubootdualpart \
 "
 
